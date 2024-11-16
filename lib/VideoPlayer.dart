@@ -19,7 +19,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // Initialize YoutubePlayerController
     _controller = YoutubePlayerController(
       initialVideoId: YoutubePlayer.convertUrlToId(widget.url) ?? 'No Internet Connection',
-      flags: YoutubePlayerFlags(
+      flags: const YoutubePlayerFlags(
         forceHD: true,
         enableCaption: false,
         hideThumbnail: true,

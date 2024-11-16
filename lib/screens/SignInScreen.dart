@@ -17,8 +17,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
   // Return type will be changed after onTap functionality added
   Widget textField(IconData icon, String hintText){
-    this._icon = icon;
-    this._hintText = hintText;
+    _icon = icon;
+    _hintText = hintText;
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: TextField(
@@ -37,9 +37,9 @@ class _SignInScreenState extends State<SignInScreen> {
             prefixIcon: Icon(_icon),
             prefixIconColor: Colors.grey,
             hintText: _hintText,
-            hintStyle: TextStyle(fontFamily: 'Roboto', color: Colors.grey, fontSize: 12)
+            hintStyle: const TextStyle(fontFamily: 'Roboto', color: Colors.grey, fontSize: 12)
         ),
-        style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -80,12 +80,12 @@ class _SignInScreenState extends State<SignInScreen> {
                 onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                  padding: EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
                   elevation: 2.5,
                 ),
                 child: Ink(
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [Color(0xff64B6FF), Color(0xff374ABE), ],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
@@ -93,9 +93,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   child: Container(
-                    constraints: BoxConstraints(maxWidth: 370.0, minHeight: 55.0),
+                    constraints: const BoxConstraints(maxWidth: 370.0, minHeight: 55.0),
                     alignment: Alignment.center,
-                    child: Text(
+                    child: const Text(
                       "LogIn",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.bold, fontSize: 21,color: Colors.white),
@@ -109,7 +109,7 @@ class _SignInScreenState extends State<SignInScreen> {
               // Divider Line after Register Button
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: mq.width * 0.06),
-                child: Divider(color: Colors.grey,),
+                child: const Divider(color: Colors.grey,),
               ),
 
               SizedBox(height: mq.height * 0.015,),
@@ -120,15 +120,16 @@ class _SignInScreenState extends State<SignInScreen> {
                 children: [
                   ElevatedButton(
                     onPressed: () { },
-                    child: Image.asset('images/google.png', height: 50,),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white, shadowColor: Colors.transparent, shape: CircleBorder(),),
+                      backgroundColor: Colors.white, shadowColor: Colors.transparent, shape: const CircleBorder(),
+                    ),
+                    child: Image.asset('images/google.png', height: 50,),
                   ),
                   ElevatedButton(
                     onPressed: () { },
-                    child: Image.asset('images/facebook.png', height: 51,),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: colors.white, shadowColor: Colors.transparent, shape: CircleBorder(),),
+                      backgroundColor: colors.white, shadowColor: Colors.transparent, shape: const CircleBorder(),),
+                    child: Image.asset('images/facebook.png', height: 51,),
                   ),
                 ],
               ),
@@ -138,8 +139,8 @@ class _SignInScreenState extends State<SignInScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have an account?", style: TextStyle(fontFamily: 'Poppins', fontSize: 12),),
-                  InkWell(child: Text(' Sign Up', style: TextStyle(fontFamily: 'Poppins', fontSize: 13, fontWeight: FontWeight.bold),), onTap: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignUpScreen()));},)
+                  const Text("Don't have an account?", style: TextStyle(fontFamily: 'Poppins', fontSize: 12),),
+                  InkWell(child: const Text(' Sign Up', style: TextStyle(fontFamily: 'Poppins', fontSize: 13, fontWeight: FontWeight.bold),), onTap: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));},)
                 ],
               )
             ],
@@ -153,6 +154,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
 // Password Field eyeButton and obSecured Functionality
 class PasswordField extends StatefulWidget {
+  const PasswordField({super.key});
+
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
 }
@@ -183,9 +186,9 @@ class _PasswordFieldState extends State<PasswordField> {
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(12),
           ),
-          prefixIcon: Icon(Icons.lock_outline_rounded, color: Colors.grey),
+          prefixIcon: const Icon(Icons.lock_outline_rounded, color: Colors.grey),
           hintText: 'Password',
-          hintStyle: TextStyle(fontFamily: 'Roboto', color: Colors.grey, fontSize: 12),
+          hintStyle: const TextStyle(fontFamily: 'Roboto', color: Colors.grey, fontSize: 12),
           suffixIcon: IconButton(
             onPressed: _togglePasswordVisibility,
             icon: Icon(
@@ -194,7 +197,7 @@ class _PasswordFieldState extends State<PasswordField> {
             color: Colors.grey,
           ),
         ),
-        style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
       ),
     );
   }

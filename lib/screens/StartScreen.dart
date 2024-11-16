@@ -60,7 +60,7 @@ class _StartScreenState extends State<StartScreen> {
               width: mq.width * .80,
               height: mq.height * .07,
               child: ElevatedButton(
-                onPressed: () { Navigator.pushReplacement(context, MaterialPageRoute(builder: (builder) => SignUpScreen())); },
+                onPressed: () { Navigator.pushReplacement(context, MaterialPageRoute(builder: (builder) => const SignUpScreen())); },
                 style: ElevatedButton.styleFrom(elevation: 2, backgroundColor: Colors.white,),
                 child: Text('Get Started', style: TextStyle(fontFamily: 'Poppins',fontSize: 20,fontWeight: FontWeight.bold,color: colors.primayColor1,),),
 

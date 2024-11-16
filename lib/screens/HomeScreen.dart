@@ -17,22 +17,22 @@ class HomeScreen extends StatelessWidget {
       return InkWell(
         onTap: () {
           if(Index == 0) {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Cardio()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Cardio()));
           }
           if(Index == 1) {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Yoga()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Yoga()));
           }
           if(Index == 2) {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WeightLose()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const WeightLose()));
           }
           if(Index == 3) {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WeightGain()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const WeightGain()));
           }
           if(Index == 4) {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StrengthTraining()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const StrengthTraining()));
           }
           if(Index == 5) {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CircuitTraining()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const CircuitTraining()));
           }
         },
         borderRadius: BorderRadius.circular(16),
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.black.withOpacity(0.1),
                   spreadRadius: 0,
                   blurRadius: 2,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),],
             ),
             child: Text(workoutName, style: TextStyle(fontFamily: 'Poppins', fontSize: 18, fontWeight: FontWeight.bold, color: colors.black,),textAlign: TextAlign.center,),
@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Choose your Workout', style: TextStyle(fontFamily: 'Poppins', fontSize: 22, fontWeight: FontWeight.w500),),
+            const Text('Choose your Workout', style: TextStyle(fontFamily: 'Poppins', fontSize: 22, fontWeight: FontWeight.w500),),
 
             WorkoutCat('Cardio', 0),
             WorkoutCat('Yoga', 1),

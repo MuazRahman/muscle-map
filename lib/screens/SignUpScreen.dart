@@ -3,7 +3,7 @@ import '../colors.dart';
 import 'SignInScreen.dart';
 
 class SignUpScreen extends StatelessWidget {
-  SignUpScreen({super.key});
+  const SignUpScreen({super.key});
 
   // Function to create a text field with an icon and hint text
   Widget textField(IconData icon, String hintText) {
@@ -23,9 +23,9 @@ class SignUpScreen extends StatelessWidget {
           ),
           prefixIcon: Icon(icon, color: Colors.grey),
           hintText: hintText,
-          hintStyle: TextStyle(fontFamily: 'Roboto', color: Colors.grey, fontSize: 12),
+          hintStyle: const TextStyle(fontFamily: 'Roboto', color: Colors.grey, fontSize: 12),
         ),
-        style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -80,12 +80,12 @@ class SignUpScreen extends StatelessWidget {
                 onPressed: () { },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                  padding: EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
                   elevation: 2.5,
                 ),
                 child: Ink(
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [Color(0xff64B6FF), Color(0xff374ABE)],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
@@ -93,9 +93,9 @@ class SignUpScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   child: Container(
-                    constraints: BoxConstraints(maxWidth: 370.0, minHeight: 55.0),
+                    constraints: const BoxConstraints(maxWidth: 370.0, minHeight: 55.0),
                     alignment: Alignment.center,
-                    child: Text(
+                    child: const Text(
                       "Register",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.bold, fontSize: 21, color: Colors.white),
@@ -109,7 +109,7 @@ class SignUpScreen extends StatelessWidget {
               // Divider Line after Register Button
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: mq.width * 0.06),
-                child: Divider(color: Colors.grey),
+                child: const Divider(color: Colors.grey),
               ),
 
               SizedBox(height: mq.height * 0.015),
@@ -120,21 +120,21 @@ class SignUpScreen extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {},
-                    child: Image.asset('images/google.png', height: 50),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       shadowColor: Colors.transparent,
-                      shape: CircleBorder(),
+                      shape: const CircleBorder(),
                     ),
+                    child: Image.asset('images/google.png', height: 50),
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Image.asset('images/facebook.png', height: 51),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors.white,
                       shadowColor: Colors.transparent,
-                      shape: CircleBorder(),
+                      shape: const CircleBorder(),
                     ),
+                    child: Image.asset('images/facebook.png', height: 51),
                   ),
                 ],
               ),
@@ -145,9 +145,9 @@ class SignUpScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Already have an account?', style: TextStyle(fontFamily: 'Poppins', fontSize: 12)),
+                  const Text('Already have an account?', style: TextStyle(fontFamily: 'Poppins', fontSize: 12)),
                   InkWell(
-                    child: Text(' Sign In', style: TextStyle(fontFamily: 'Poppins', fontSize: 13, fontWeight: FontWeight.bold)),
+                    child: const Text(' Sign In', style: TextStyle(fontFamily: 'Poppins', fontSize: 13, fontWeight: FontWeight.bold)),
                     onTap: () {
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignInScreen()));
                     },
@@ -165,6 +165,8 @@ class SignUpScreen extends StatelessWidget {
 
 // Password Field eyeButton and obSecured Functionality
 class PasswordField extends StatefulWidget {
+  const PasswordField({super.key});
+
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
 }
@@ -195,9 +197,9 @@ class _PasswordFieldState extends State<PasswordField> {
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(12),
           ),
-          prefixIcon: Icon(Icons.lock_outline_rounded, color: Colors.grey),
+          prefixIcon: const Icon(Icons.lock_outline_rounded, color: Colors.grey),
           hintText: 'Password',
-          hintStyle: TextStyle(fontFamily: 'Roboto', color: Colors.grey, fontSize: 12),
+          hintStyle: const TextStyle(fontFamily: 'Roboto', color: Colors.grey, fontSize: 12),
           suffixIcon: IconButton(
             onPressed: _togglePasswordVisibility,
             icon: Icon(
@@ -206,7 +208,7 @@ class _PasswordFieldState extends State<PasswordField> {
             color: Colors.grey,
           ),
         ),
-        style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -214,6 +216,8 @@ class _PasswordFieldState extends State<PasswordField> {
 
 // Make checkbox checkable
 class CheckboxExample extends StatefulWidget {
+  const CheckboxExample({super.key});
+
   @override
   _CheckboxExampleState createState() => _CheckboxExampleState();
 }

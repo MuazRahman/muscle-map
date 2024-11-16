@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: colors.white)
       ),
       debugShowCheckedModeBanner: false,
-      home: StartScreen(),
+      home: const StartScreen(),
     );
   }
 }
